@@ -1,0 +1,50 @@
+name: 🔄 تحديث الملف الشخصي التلقائي
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # كل 6 ساعات
+  workflow_dispatch:        # تشغيل يدوي
+  push:
+    branches: [ main ]
+
+jobs:
+  update-profile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: 📥 جلب الكود
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: 🐍 إعداد Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: 📊 تحديث الإحصائيات
+        run: |
+          # تحديث التاريخ
+          CURRENT_DATE=$(date '+%Y-%m-%d %H:%M:%S')
+          echo "التحديث الأخير: $CURRENT_DATE"
+          
+          # تحديث README
+          sed -i "s/آخر تحديث:.*/آخر تحديث: $CURRENT_DATE/g" README.md
+          sed -i "s/© [0-9]\{4\}/© $(date +%Y)/g" README.md
+          
+      - name: 📝 حفظ التغييرات
+        run: |
+          git config --local user.name 'Marwan Hub Bot'
+          git config --local user.email 'marwanhub.eg@gmail.com'
+          git add README.md
+          git commit -m "🤖 تحديث تلقائي - $(date '+%Y-%m-%d %H:%M:%S')" || exit 0
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 📨 إشعار الانتهاء
+        run: |
+          echo "✅ تم تحديث الملف الشخصي بنجاح!"
+          echo "🕐 الوقت: $(date)"

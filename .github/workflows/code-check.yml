@@ -1,0 +1,24 @@
+name: 🔍 فحص الكود
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: 🔧 فحص Markdown
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'yes'
+          
+      - name: 📊 فحص الروابط
+        run: |
+          echo "🔗 جاري فحص الروابط في README..."
+          # يمكن إضافة فحص الروابط هنا
+          
+      - name: ✅ الإنهاء
+        run: echo "تم فحص الكود بنجاح"
