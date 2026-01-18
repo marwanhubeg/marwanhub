@@ -1,0 +1,27 @@
+# نظام
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# بيئات التطوير
+.vscode/
+.idea/
+*.swp
+
+# تبعيات
+node_modules/
+__pycache__/
+*.pyc
+.env
+.env.local
+
+# ملفات البناء
+dist/
+build/
+*.exe
+*.dll
+
+# سجلات
+*.log
+logs/
