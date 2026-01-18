@@ -7,7 +7,7 @@
 ![Profile Views](https://komarev.com/ghpvc/?username=marwanhub&color=blue&label=زوار+الملف+الشخصي)
 ![GitHub Followers](https://img.shields.io/github/followers/marwanhub?label=متابعون&style=social)
 ![GitHub Stars](https://img.shields.io/github/stars/marwanhub?label=نجوم&style=social)
-![Updated](https://img.shields.io/badge/محدث-2026-01-18-brightgreen)
+![Updated](https://img.shields.io/badge/محدث-DATE_PLACEHOLDER-brightgreen)
 
 <!-- Title -->
 <h1>🚀 Marwan Hub | مركز الحلول الرقمية</h1>
@@ -106,8 +106,8 @@
 
 ### ⭐ إذا أعجبك محتوانا، لا تنسى تمنحنا نجمة!
 
-**آخر تحديث: Sunday, 2026-01-18 13:49:08
+**آخر تحديث:** UPDATE_TIME_PLACEHOLDER
 
-© 2026 **Marwan Hub** - جميع الحقوق محفوظة
+© YEAR_PLACEHOLDER **Marwan Hub** - جميع الحقوق محفوظة
 
 </div>
